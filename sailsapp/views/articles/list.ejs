@@ -1,0 +1,24 @@
+<h1 class="display-4">Articles</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% articles.forEach(function(article){ %>
+            <tr>
+                <td><%= article.id %></td>
+                <td><%= article.title %></td>
+                <td><%= article.body %></td>
+                <td>
+                    <a href="/articles/edit/<%= article.id %>" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="/articles/delete/<%= article.id %>" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
